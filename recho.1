@@ -1,0 +1,42 @@
+.\" Generated with Ronnjs 0.3.8
+.\" http://github.com/kapouer/ronnjs/
+.
+.TH "RECHO" "1" "April 2014" "" ""
+.
+.SH "NAME"
+\fBrecho\fR \-\- Echo strings over ssh
+.
+.SH "SYNOPSIS"
+\fBrecho\fR [\-hvV] [ssh_options] [user@]<host> [echo_options] [string]
+.
+.SH "OPTIONS"
+  \fB\-v, \-\-verbose\fR           enable verbose output
+  \fB\-h, \-\-help\fR              display this message
+  \fB\-V, \-\-version\fR           output version
+.
+.P
+  \fB[ssh_options]\fR           ssh options
+  \fB[echo_options]\fR          echo options
+.
+.SH "USAGE"
+  $ recho somehost\.com biz baz > /srv/womp
+.
+.SH "AUTHOR"
+.
+.IP "\(bu" 4
+Joseph Werle \fIjoseph\.werle@gmail\.com\fR
+.
+.IP "" 0
+.
+.SH "REPORTING BUGS"
+.
+.IP "\(bu" 4
+https://github\.com/jwerle/recho/issues
+.
+.IP "" 0
+.
+.SH "SEE ALSO"
+  \fBssh\fR(1), \fBecho\fR(1)
+.
+.SH "LICENSE"
+  MIT (C) Copyright Joseph Werle 2014
