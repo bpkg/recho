@@ -1,0 +1,7 @@
+{
+  "name": "recho",
+  "version": "0.0.1",
+  "description": "Easily echo strings over ssh",
+  "scripts": [ "recho.sh" ],
+  "install": "make install"
+}

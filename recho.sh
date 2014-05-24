@@ -1,6 +1,5 @@
 #!/bin/bash
 
-PROG=`basename $0`
 VERSION="0.0.1"
 NULL=/dev/null
 STDIN=0
@@ -30,7 +29,7 @@ version () {
 
 ## outputs program usage
 usage () {
-  echo "usage: ${PROG} [-hV] [ssh_options] [user@]<host> [echo_options] [string]"
+  echo "usage: recho [-hV] [ssh_options] [user@]<host> [echo_options] [string]"
 }
 
 ## outputs verbose information
@@ -81,12 +80,12 @@ parse_opts () {
 
       -h|--help)
         usage 1
-        exit 1
+        return 1
         ;;
 
       -V|--version)
         version
-        exit 0
+        return 0
         ;;
 
       -v|--verbose)
@@ -111,13 +110,13 @@ parse_opts () {
 
 recho () {
   ## opts
-  parse_opts "$@"
+  parse_opts "$@" || return 1
 
   ## detect missing variables
   if [[ -z $host ]]; then
     perror "Missing host"
     usage
-    exit 1
+    return 1
   fi
 
   ## build command
@@ -135,6 +134,8 @@ recho () {
   $cmd
 }
 
-## main
-recho "$@"
-exit $?
+if [[ ${BASH_SOURCE[0]} != $0 ]]; then
+  export -f recho
+else
+  recho "$@"
+fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RECHO=./recho
+RECHO=./recho.sh
 HOST=localhost
 FILE=`pwd`/foo.txt
 OUT="beep"

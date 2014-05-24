@@ -9,13 +9,13 @@ test:
 	./test.sh
 
 install:
-	install $(BIN) $(PREFIX)/bin
-	install $(BIN).1 $(MANPREFIX)
+	cp recho.sh $(PREFIX)/bin/$(BIN)
+	cp recho.1 $(MANPREFIX)/$(BIN).1
 
 uninstall:
 	rm -f $(PREFIX)/bin/$(BIN)
 	rm -f $(MANPREFIX)/$(BIN).1
 
 man:
-	@curl -# -F page=@$(BIN).1.md -o $(BIN).1 http://mantastic.herokuapp.com
-	@echo "$(BIN).1"
+	@curl -# -F page=@recho.1.md -o recho.1 http://mantastic.herokuapp.com
+	@echo "recho.1"
