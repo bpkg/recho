@@ -5,6 +5,14 @@ Easily echo strings over ssh
 
 ## install
 
+[bpkg](https://github.com/bpkg/bpkg)
+
+```sh
+$ bpkg install recho -g
+```
+
+or
+
 ```sh
 $ make install
 ```
