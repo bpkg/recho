@@ -1,4 +1,3 @@
-
 BIN ?= recho
 PREFIX ?= /usr/local
 MANPREFIX ?= $(PREFIX)/share/man/man1
@@ -10,7 +9,7 @@ test:
 
 install:
 	cp recho.sh $(PREFIX)/bin/$(BIN)
-	cp recho.1 $(MANPREFIX)/$(BIN).1
+	if test -f recho.1; then mkdir -p $(MANPREFIX) && cp recho.1 $(MANPREFIX)/$(BIN).1; fi
 
 uninstall:
 	rm -f $(PREFIX)/bin/$(BIN)
